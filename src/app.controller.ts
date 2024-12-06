@@ -11,9 +11,6 @@ export class AppController {
     return this.appService.getHome();
   }
 
-  @Get('login')
-  getLogin(): string {
-    return this.appService.getLogin();
-  }
+ 
 }
 

@@ -6,7 +6,5 @@ export class AppService {
     return { message: 'Marcos Lindo!' };;
   }
 
-  getLogin(): string {
-    return 'Página de Login';
-  }
+
 }
