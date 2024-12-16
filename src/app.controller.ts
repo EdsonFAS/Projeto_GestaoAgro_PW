@@ -10,7 +10,4 @@ export class AppController {
   getHome(): any {
     return this.appService.getHome();
   }
-
- 
 }
-
