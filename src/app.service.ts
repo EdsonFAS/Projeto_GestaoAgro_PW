@@ -5,6 +5,4 @@ export class AppService {
   getHome(): any {
     return { message: 'Marcos Lindo!' };;
   }
-
-
 }
