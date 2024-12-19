@@ -1,7 +1,7 @@
 {
   "name": "webproject2",
   "version": "0.0.1",
-  "description": "<p align=\"center\">\r   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"120\" alt=\"Nest Logo\" /></a>\r </p>",
+  "description": "",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -31,8 +31,7 @@
     "postcss": "^8.4.49",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "tailwindcss": "^3.4.15",
-    "typeorm": "^0.3.20"
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
@@ -74,9 +73,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "main": ".eslintrc.js",
-  "directories": {
-    "test": "test"
   }
 }
