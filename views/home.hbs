@@ -1,21 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="/css/styles.css">
-    
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Gestão Agro - Animais</title>
 </head>
-<body class="w-full h-full">
-    <nav class="w-[52px] h-svh shadow-neutral-300 shadow-md  flex items-center flex-col gap-2 p-1 pt-3">
-        <div class="w-full h-[40px] gap-1 flex flex-col  items-center  ">
-            <div class="w-[36px] h-[6px] bg-green-500 rounded-md"> </div>
-            <div class="w-[36px] h-[6px] bg-green-500 rounded-md"></div>
-            <div class="w-[36px] h-[6px] bg-green-500 rounded-md"></div>
-        </div>
-       <div class=" bg-lime-100 w-[42px] rounded-md p-[2px]"><img class="w-[36px] bg-lime-100 " src="/assest/house-line.svg" alt=""></div>
-    </nav>
-</body>
-</html>
+<body class="p-6 bg-gray-100">
+    <div class="flex mb-4">
+        <input type="text" placeholder="Buscar animal..." class="w-4/5 h-8 px-4 border border-gray-300 rounded-l-md">
+        <div class="w-3"></div>
+        <button class="w-1/5 h-8 bg-green-600 text-white rounded-r-md hover:bg-green-700">Cadastrar Animal</button>
+    </div>
+    
+    <div class="overflow-x-auto bg-white p-4 rounded-md shadow">
+        <table class="min-w-full border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200 text-left">
+                    <th class="border p-2">Código</th>
+                    <th class="border p-2">Raça</th>
+                    <th class="border p-2">Peso</th>
+                    <th class="border p-2">Sexo</th>
+                    <th class="border p-2">Idade</th>
+                    <th class="border p-2">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border">
+                    <td class="border font-semibold p-2">001</td>
+                    <td class="border font-semibold p-2">Nelore</td>
+                    <td class="border font-semibold p-2">450 kg</td>
+                    <td class="border font-semibold p-2">Macho</td>
+                    <td class="border font-semibold p-2">2 anos</td>
+                    <td class="border font-semibold p-2">
+                        <button class="text-blue-600 hover:underline">Editar</button>
+                        <button class="text-red-600 hover:underline ml-2">Excluir</button>
+                    </td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </tbody>
+        </table>
+    </div>
