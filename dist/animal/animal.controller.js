@@ -22,8 +22,9 @@ let AnimalController = class AnimalController {
     create(body) {
         return this.animalService.createAnimal(body.CodigoBrinco, body.Raca, body.Peso, body.Sexo, body.Idade);
     }
-    findAll() {
-        return this.animalService.findAll();
+    async findAll() {
+        const animais = await this.animalService.findAll();
+        return { Codigo: animais[1].CodigoBrinco };
     }
 };
 exports.AnimalController = AnimalController;

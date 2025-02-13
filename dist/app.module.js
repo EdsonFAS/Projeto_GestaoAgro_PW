@@ -30,7 +30,7 @@ exports.AppModule = AppModule = __decorate([
                 password: 'root',
                 database: 'GestaoAgro',
                 entities: [animal_entity_1.Animal],
-                synchronize: true,
+                synchronize: false,
             }),
             typeorm_1.TypeOrmModule.forFeature([animal_entity_1.Animal])],
         controllers: [app_controller_1.AppController],

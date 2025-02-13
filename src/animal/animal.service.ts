@@ -22,7 +22,7 @@ export class AnimalService {
     return this.AnimalRepository.save(animal);
   }
 
-  async findAll(): Promise<Animal[]> {
+  findAll(): Promise<Animal[]> {
     return this.AnimalRepository.find();
   }
 }

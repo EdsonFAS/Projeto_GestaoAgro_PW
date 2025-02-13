@@ -10,7 +10,7 @@ async function bootstrap() {
     app.setBaseViewsDir((0, path_1.join)(__dirname, '..', 'views'));
     app.setViewEngine('hbs');
     hbs.registerPartials((0, path_1.join)(__dirname, '..', 'views', 'partials'));
-    await app.listen(process.env.PORT ?? 3000);
+    await app.listen(process.env.PORT ?? 4000);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

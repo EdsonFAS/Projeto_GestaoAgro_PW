@@ -18,7 +18,7 @@ import { Animal } from './animal/entities/animal.entity';
       password: 'root', // senha do banco de dados
       database: 'GestaoAgro', // nome do banco de dados
       entities: [Animal], // aqui você coloca suas entidades, pode estar vazio inicialmente
-      synchronize: true, // se estiver em desenvolvimento, pode deixar como true, mas em produção, deve ser false
+      synchronize: false, // se estiver em desenvolvimento, pode deixar como true, mas em produção, deve ser false
     })
     ,
     TypeOrmModule.forFeature([Animal])],

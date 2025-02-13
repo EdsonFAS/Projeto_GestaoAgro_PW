@@ -30,7 +30,7 @@ let AnimalService = class AnimalService {
         animal.Idade;
         return this.AnimalRepository.save(animal);
     }
-    async findAll() {
+    findAll() {
         return this.AnimalRepository.find();
     }
 };

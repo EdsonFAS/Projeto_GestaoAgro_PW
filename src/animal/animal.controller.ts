@@ -16,8 +16,9 @@ export class AnimalController {
 
   @Get()
   @Render('home')
-  findAll(): Promise<Animal[]> {
-    return this.animalService.findAll();
+  async findAll() {
+    const animais =  await this.animalService.findAll()
+    return { Codigo: animais[1].CodigoBrinco };
   }
 
 

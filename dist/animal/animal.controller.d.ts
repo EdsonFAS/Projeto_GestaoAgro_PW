@@ -10,5 +10,7 @@ export declare class AnimalController {
         Sexo: string;
         Idade: number;
     }): Promise<Animal>;
-    findAll(): Promise<Animal[]>;
+    findAll(): Promise<{
+        Codigo: number;
+    }>;
 }
