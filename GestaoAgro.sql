@@ -133,9 +133,9 @@ VALUES
 
 -- Dados Tabela Pastagem
 INSERT INTO Pastagem (AreaPastagem, LocalizacaoPastagem, Periodo, fk_Animal_CodigoBrinco) VALUES
-(15.5, 'Fazenda Boa Vista', 120, 1),
-(20.0, 'Sítio São José', 150, 2),
-(12.3, 'Fazenda Nova Vida', 90, 3);
+(15.5, 'Fazenda Boa Vista', 120, 'BR002'),
+(20.0, 'Sítio São José', 150, 'BR006'),
+(12.3, 'Fazenda Nova Vida', 90, 'BR002');
 
 -- Dados Tabela Alimentacao
 INSERT INTO Alimentacao (Fornecedor, Nome, QuantidadeEstoque, DataValidade, DataEntrega)
@@ -153,15 +153,15 @@ VALUES
 
 -- Dados Tabela Saude
 INSERT INTO Saude (Veterinario, Status, Apetite, Temperatura, fk_Animal_CodigoBrinco, DataVerificacao) VALUES
-('Dr. Carlos Mendes', 'Saudável', 'Normal', 38.5, 1, '2024-12-05'),
-('Dra. Ana Paula', 'Febre', 'Reduzido', 40.2, 2, '2024-12-06'),
-('Dr. Roberto Lima', 'Saudável', 'Normal', 38.7, 3, '2024-12-07');
+('Dr. Carlos Mendes', 'Saudável', 'Normal', 38.5, 'BR002', '2024-12-05'),
+('Dra. Ana Paula', 'Febre', 'Reduzido', 40.2,  'BR006', '2024-12-06'),
+('Dr. Roberto Lima', 'Saudável', 'Normal', 38.7, 'BR002', '2024-12-07');
 
 -- Dados Tabela Producao
 INSERT INTO Producao (TipoProducao, Data, QuantidadeProduzida, fk_Animal_CodigoBrinco) VALUES
-('Leite', '2024-12-08', '20 litros', 1),
-('Carne', '2024-11-30', '300 kg', 2),
-('Leite', '2024-12-08', '18 litros', 3);
+('Leite', '2024-12-08', '20 litros', 'BR002'),
+('Carne', '2024-11-30', '300 kg', 'BR006'),
+('Leite', '2024-12-08', '18 litros', 'BR002');
 
 -- Consultar dados inseridos
 SELECT * FROM Usuario;

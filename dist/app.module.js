@@ -27,7 +27,7 @@ exports.AppModule = AppModule = __decorate([
                 host: 'localhost',
                 port: 3306,
                 username: 'root',
-                password: 'Edson!2Xz',
+                password: 'root',
                 database: 'GestaoAgro',
                 entities: [animal_entity_1.Animal],
                 synchronize: false,
