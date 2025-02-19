@@ -23,11 +23,12 @@ let AnimalService = class AnimalService {
     }
     async createAnimal(CodigoBrinco, Raca, Peso, Sexo, Idade) {
         const animal = new animal_entity_1.Animal();
-        animal.CodigoBrinco;
-        animal.Raca;
-        animal.Peso;
-        animal.Sexo;
-        animal.Idade;
+        animal.CodigoBrinco = CodigoBrinco;
+        animal.Raca = Raca;
+        animal.Peso = Peso;
+        animal.Sexo = Sexo;
+        animal.Idade = Idade;
+        console.log(animal);
         return this.AnimalRepository.save(animal);
     }
     findAll() {

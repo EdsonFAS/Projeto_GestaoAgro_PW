@@ -1,5 +1,5 @@
 export declare class Animal {
-    CodigoBrinco: number;
+    CodigoBrinco: String;
     Raca: string;
     Peso: number;
     Sexo: string;

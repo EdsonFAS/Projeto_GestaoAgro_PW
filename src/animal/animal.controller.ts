@@ -10,15 +10,25 @@ export class AnimalController {
   constructor(private readonly animalService: AnimalService) {}
 
   @Post()
-  create(@Body() body: { CodigoBrinco: number, Raca: string, Peso: number, Sexo: string, Idade: number }): Promise<Animal> {
-    return this.animalService.createAnimal(body.CodigoBrinco, body.Raca, body.Peso, body.Sexo, body.Idade);
+    async create(@Body() body: { CodigoBrinco: String, Raca: string, Peso: number, Sexo: string, Idade: number }): Promise<Animal> {
+    console.log(body)
+    return await this.animalService.createAnimal(body.CodigoBrinco, body.Raca, body.Peso, body.Sexo, body.Idade);
   }
 
   @Get()
   @Render('home')
   async findAll() {
-    const animais =  await this.animalService.findAll()
-    return { Codigo: animais[1].CodigoBrinco };
+    const Animais = await this.animalService.findAll()
+    const AnimaisFormamtados = Animais.map(Animal => ({
+      CodigoBrinco: Animal.CodigoBrinco,
+      Raca: Animal.Raca,
+      Peso: Animal.Peso,
+      Sexo: Animal.Sexo,
+      Idade: Animal.Idade
+    }))
+  
+    return {Animais:AnimaisFormamtados };
+
   }
 
 

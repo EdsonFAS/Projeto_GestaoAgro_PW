@@ -16,7 +16,7 @@ let Animal = class Animal {
 exports.Animal = Animal;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
+    __metadata("design:type", String)
 ], Animal.prototype, "CodigoBrinco", void 0);
 __decorate([
     (0, typeorm_1.Column)(),

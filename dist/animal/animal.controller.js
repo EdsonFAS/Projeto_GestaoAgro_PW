@@ -19,12 +19,20 @@ let AnimalController = class AnimalController {
     constructor(animalService) {
         this.animalService = animalService;
     }
-    create(body) {
-        return this.animalService.createAnimal(body.CodigoBrinco, body.Raca, body.Peso, body.Sexo, body.Idade);
+    async create(body) {
+        console.log(body);
+        return await this.animalService.createAnimal(body.CodigoBrinco, body.Raca, body.Peso, body.Sexo, body.Idade);
     }
     async findAll() {
-        const animais = await this.animalService.findAll();
-        return { Codigo: animais[1].CodigoBrinco };
+        const Animais = await this.animalService.findAll();
+        const AnimaisFormamtados = Animais.map(Animal => ({
+            CodigoBrinco: Animal.CodigoBrinco,
+            Raca: Animal.Raca,
+            Peso: Animal.Peso,
+            Sexo: Animal.Sexo,
+            Idade: Animal.Idade
+        }));
+        return { Animais: AnimaisFormamtados };
     }
 };
 exports.AnimalController = AnimalController;

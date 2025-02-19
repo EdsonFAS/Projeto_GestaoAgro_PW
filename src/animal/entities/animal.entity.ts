@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 @Entity()
 export class Animal {
   @PrimaryGeneratedColumn()
-  CodigoBrinco: number;
+  CodigoBrinco: String;
 
   @Column()
   Raca: string;

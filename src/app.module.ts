@@ -15,7 +15,7 @@ import { Animal } from './animal/entities/animal.entity';
       host: 'localhost', // ou o IP do seu banco
       port: 3306, // porta padrão do MySQL
       username: 'root', // usuário do banco de dados
-      password: 'root', // senha do banco de dados
+      password: 'Edson!2Xz', // senha do banco de dados
       database: 'GestaoAgro', // nome do banco de dados
       entities: [Animal], // aqui você coloca suas entidades, pode estar vazio inicialmente
       synchronize: false, // se estiver em desenvolvimento, pode deixar como true, mas em produção, deve ser false

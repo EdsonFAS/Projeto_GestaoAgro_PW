@@ -4,13 +4,19 @@ export declare class AnimalController {
     private readonly animalService;
     constructor(animalService: AnimalService);
     create(body: {
-        CodigoBrinco: number;
+        CodigoBrinco: String;
         Raca: string;
         Peso: number;
         Sexo: string;
         Idade: number;
     }): Promise<Animal>;
     findAll(): Promise<{
-        Codigo: number;
+        Animais: {
+            CodigoBrinco: String;
+            Raca: string;
+            Peso: number;
+            Sexo: string;
+            Idade: number;
+        }[];
     }>;
 }
