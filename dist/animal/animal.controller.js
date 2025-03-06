@@ -45,7 +45,7 @@ __decorate([
 ], AnimalController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)(),
-    (0, common_1.Render)('home'),
+    (0, common_1.Render)('animal'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)

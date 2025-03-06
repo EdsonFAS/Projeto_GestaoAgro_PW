@@ -16,7 +16,7 @@ export class AnimalController {
   }
 
   @Get()
-  @Render('home')
+  @Render('animal')
   async findAll() {
     const Animais = await this.animalService.findAll()
     const AnimaisFormamtados = Animais.map(Animal => ({
