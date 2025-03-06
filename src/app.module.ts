@@ -7,6 +7,7 @@ import { HomeModule } from './home/home.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AnimalModule } from './animal/animal.module';
 import { Animal } from './animal/entities/animal.entity';
+import { RebanhosModule } from './rebanhos/rebanhos.module';
 
 @Module({
   imports: [SobreModule, LoginModule, HomeModule, AnimalModule,
@@ -21,7 +22,8 @@ import { Animal } from './animal/entities/animal.entity';
       synchronize: false, // se estiver em desenvolvimento, pode deixar como true, mas em produção, deve ser false
     })
     ,
-    TypeOrmModule.forFeature([Animal])],
+    TypeOrmModule.forFeature([Animal]),
+    RebanhosModule],
   controllers: [AppController],
   providers: [AppService],
 })

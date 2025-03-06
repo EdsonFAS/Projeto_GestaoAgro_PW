@@ -16,6 +16,7 @@ const home_module_1 = require("./home/home.module");
 const typeorm_1 = require("@nestjs/typeorm");
 const animal_module_1 = require("./animal/animal.module");
 const animal_entity_1 = require("./animal/entities/animal.entity");
+const rebanhos_module_1 = require("./rebanhos/rebanhos.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -32,7 +33,8 @@ exports.AppModule = AppModule = __decorate([
                 entities: [animal_entity_1.Animal],
                 synchronize: false,
             }),
-            typeorm_1.TypeOrmModule.forFeature([animal_entity_1.Animal])],
+            typeorm_1.TypeOrmModule.forFeature([animal_entity_1.Animal]),
+            rebanhos_module_1.RebanhosModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
