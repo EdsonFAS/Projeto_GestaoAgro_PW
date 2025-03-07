@@ -60,22 +60,22 @@
         <h2 class="text-xl font-bold mb-4">Cadastrar Animal</h2>
         <form id="animalForm">
             <label class="block mb-2">Código do Brinco:</label>
-            <input type="text" name="CodigoBrinco" class="w-full p-2 border rounded mb-2">
+            <input id="CodigoBrinco" type="text" name="CodigoBrinco" class="w-full p-2 border rounded mb-2">
 
             <label class="block mb-2">Raça:</label>
-            <input type="text" name="Raca" class="w-full p-2 border rounded mb-2">
+            <input id="Raca" type="text" name="Raca" class="w-full p-2 border rounded mb-2">
 
             <label class="block mb-2">Peso (kg):</label>
-            <input type="number" step="0.1" name="Peso" class="w-full p-2 border rounded mb-2">
+            <input id="Peso" type="number" step="any" name="Peso" class="w-full p-2 border rounded mb-2">
 
             <label class="block mb-2">Sexo:</label>
-            <select type="text" name="Sexo" class="w-full p-2 border rounded mb-2">
+            <select id="Sexo" type="text" name="Sexo" class="w-full p-2 border rounded mb-2">
                 <option value="M">Macho</option>
                 <option value="F">Fêmea</option>
             </select>
 
             <label class="block mb-2">Idade (anos):</label>
-            <input type="number" name="Idade" class="w-full p-2 border rounded mb-4">
+            <input id="Idade" type="number" name="Idade" class="w-full p-2 border rounded mb-4">
 
             <button type="submit" class="w-full bg-green-600 text-white p-2 rounded">Cadastrar</button>
         </form>
@@ -95,24 +95,25 @@ function fecharModal() {
 document.getElementById('animalForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
-
-    const response = await fetch('/animal', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+     const formData = {
+      CodigoBrinco: document.getElementById("CodigoBrinco").value,
+      Raca: document.getElementById("Raca").value,
+      Peso: parseFloat(document.getElementById("Peso").value),
+      Sexo: document.getElementById("Sexo").value,
+      Idade: parseInt(document.getElementById("Idade").value, 10)
+    };
+    
+    const response = await fetch("/animal", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
     });
 
     if (response.ok) {
-        alert('Animal cadastrado com sucesso!');
-
-        fecharModal();
-      
+      alert("Animal cadastrado com sucesso!");
     } else {
-        alert('Erro ao cadastrar o animal.');
+      const error = await response.json();
+      alert("Erro ao cadastrar: " + JSON.stringify(error.message));
     }
 });
 </script>

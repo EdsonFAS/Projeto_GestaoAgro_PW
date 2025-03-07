@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Render } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Render, UsePipes, ValidationPipe, Redirect } from '@nestjs/common';
 import { Home } from 'src/home/entities/home.entity';
 import { AnimalService } from './animal.service';
 import { CreateAnimalDto } from './dto/create-animal.dto';
@@ -10,9 +10,10 @@ export class AnimalController {
   constructor(private readonly animalService: AnimalService) {}
 
   @Post()
-    async create(@Body() body: { CodigoBrinco: String, Raca: string, Peso: number, Sexo: string, Idade: number }): Promise<Animal> {
-    console.log(body)
-    return await this.animalService.createAnimal(body.CodigoBrinco, body.Raca, body.Peso, body.Sexo, body.Idade);
+
+  @UsePipes(new ValidationPipe({ whitelist: true, transform: true }))
+  async create(@Body() createAnimalDto: CreateAnimalDto) {
+    return await this.animalService.create(createAnimalDto);
   }
 
   @Get()

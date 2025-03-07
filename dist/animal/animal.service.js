@@ -21,15 +21,9 @@ let AnimalService = class AnimalService {
     constructor(AnimalRepository) {
         this.AnimalRepository = AnimalRepository;
     }
-    async createAnimal(CodigoBrinco, Raca, Peso, Sexo, Idade) {
-        const animal = new animal_entity_1.Animal();
-        animal.CodigoBrinco = CodigoBrinco;
-        animal.Raca = Raca;
-        animal.Peso = Peso;
-        animal.Sexo = Sexo;
-        animal.Idade = Idade;
-        console.log(animal);
-        return this.AnimalRepository.save(animal);
+    async create(createAnimalDto) {
+        const animal = this.AnimalRepository.create(createAnimalDto);
+        return await this.AnimalRepository.save(animal);
     }
     findAll() {
         return this.AnimalRepository.find();

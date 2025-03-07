@@ -15,13 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AnimalController = void 0;
 const common_1 = require("@nestjs/common");
 const animal_service_1 = require("./animal.service");
+const create_animal_dto_1 = require("./dto/create-animal.dto");
 let AnimalController = class AnimalController {
     constructor(animalService) {
         this.animalService = animalService;
     }
-    async create(body) {
-        console.log(body);
-        return await this.animalService.createAnimal(body.CodigoBrinco, body.Raca, body.Peso, body.Sexo, body.Idade);
+    async create(createAnimalDto) {
+        return await this.animalService.create(createAnimalDto);
     }
     async findAll() {
         const Animais = await this.animalService.findAll();
@@ -38,9 +38,10 @@ let AnimalController = class AnimalController {
 exports.AnimalController = AnimalController;
 __decorate([
     (0, common_1.Post)(),
+    (0, common_1.UsePipes)(new common_1.ValidationPipe({ whitelist: true, transform: true })),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [create_animal_dto_1.CreateAnimalDto]),
     __metadata("design:returntype", Promise)
 ], AnimalController.prototype, "create", null);
 __decorate([
