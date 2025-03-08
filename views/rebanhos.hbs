@@ -26,7 +26,7 @@
                         <th class=" p-4">Raça</th>
                         <th class=" p-4">Peso</th>
                         <th class=" p-4">Sexo</th>
-                        <th class=" p-4">Idade</th>
+                     
                        
                         
                         <th class="rounded-tr-lg   w-[12%] text-center p-4">Ações</th>
@@ -36,11 +36,10 @@
                        {{#each Animais}}
                     <tr  class="">
     
-                        <td class=" border-b rounded-tl-xl rounded-bl-xl font-semibold py-4 pl-4">{{CodigoBrinco}}</td>
-                        <td class=" border-b font-semibold p-4">{{Raca}}</td>
-                        <td class=" border-b font-semibold p-4">{{Peso}}-kg</td>
-                        <td class=" border-b font-semibold p-4">{{Sexo}}</td>
-                        <td class=" border-b font-semibold p-4">{{Idade}} anos</td>
+                        <td class=" border-b rounded-tl-xl rounded-bl-xl font-semibold py-4 pl-4">{{IdRebanho}}</td>
+                        <td class=" border-b font-semibold p-4">{{fk_Animal_CodigoBrinco}}</td>
+                        <td class=" border-b font-semibold p-4">{{Tipo}}-kg</td>
+                        <td class=" border-b font-semibold p-4">{{Destino}}</td>
                         
                         <td class="border-b font-semibold text-center p-2">
                             <button class="text-blue-600 hover:underline">Editar</button>

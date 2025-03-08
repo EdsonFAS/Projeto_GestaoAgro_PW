@@ -28,6 +28,21 @@ let AnimalService = class AnimalService {
     findAll() {
         return this.AnimalRepository.find();
     }
+    async update(CodigoBrinco, updateAnimalDto) {
+        const animal = await this.AnimalRepository.findOne({ where: { CodigoBrinco } });
+        if (!animal) {
+            throw new common_1.NotFoundException(`Animal com ID ${CodigoBrinco} não encontrado`);
+        }
+        await this.AnimalRepository.update(CodigoBrinco, updateAnimalDto);
+        return `Animal com ID ${CodigoBrinco} atualizado com sucesso`;
+    }
+    async delete(CodigoBrinco) {
+        const result = await this.AnimalRepository.delete(CodigoBrinco);
+        if (result.affected === 0) {
+            throw new common_1.NotFoundException(`Animal com ID ${CodigoBrinco} não encontrado`);
+        }
+        return `Animal com ID ${CodigoBrinco} deletado com sucesso`;
+    }
 };
 exports.AnimalService = AnimalService;
 exports.AnimalService = AnimalService = __decorate([

@@ -8,6 +8,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AnimalModule } from './animal/animal.module';
 import { Animal } from './animal/entities/animal.entity';
 import { RebanhosModule } from './rebanhos/rebanhos.module';
+import { Rebanho } from './rebanhos/entities/rebanho.entity';
 
 @Module({
   imports: [SobreModule, LoginModule, HomeModule, AnimalModule,
@@ -18,7 +19,7 @@ import { RebanhosModule } from './rebanhos/rebanhos.module';
       username: 'root', // usuário do banco de dados
       password: 'Edson!2Xz', // senha do banco de dados
       database: 'GestaoAgro', // nome do banco de dados
-      entities: [Animal], // aqui você coloca suas entidades, pode estar vazio inicialmente
+      entities: [Animal,Rebanho], // aqui você coloca suas entidades, pode estar vazio inicialmente
       synchronize: false, // se estiver em desenvolvimento, pode deixar como true, mas em produção, deve ser false
     })
     ,

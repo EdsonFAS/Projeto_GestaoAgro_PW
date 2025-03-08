@@ -1,10 +1,10 @@
 import { AnimalService } from './animal.service';
 import { CreateAnimalDto } from './dto/create-animal.dto';
-import { Animal } from './entities/animal.entity';
+import { UpdateAnimalDto } from './dto/update-animal.dto';
 export declare class AnimalController {
     private readonly animalService;
     constructor(animalService: AnimalService);
-    create(createAnimalDto: CreateAnimalDto): Promise<Animal>;
+    create(createAnimalDto: CreateAnimalDto): Promise<import("./entities/animal.entity").Animal>;
     findAll(): Promise<{
         Animais: {
             CodigoBrinco: String;
@@ -14,4 +14,6 @@ export declare class AnimalController {
             Idade: number;
         }[];
     }>;
+    update(CodigoBrinco: string, updateAnimalDto: UpdateAnimalDto): Promise<string>;
+    delete(CodigoBrinco: string): Promise<string>;
 }

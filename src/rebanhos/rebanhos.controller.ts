@@ -14,8 +14,17 @@ export class RebanhosController {
 
   @Get()
   @Render("rebanhos")
-  findAll() {
-    
+  async findAll() {
+    const Animais = await this.rebanhosService.findAll()
+    const AnimaisFormamtados = Animais.map(Animal => ({
+      IdRebanho: Animal.IdRebanho,
+      fk_Animal_CodigoBrinco: Animal.fk_Animal_CodigoBrinco,
+      Tipo: Animal.Tipo,
+      Destino: Animal.Destino,
+    }))
+  
+    return {Animais:AnimaisFormamtados };
+
   }
 
 

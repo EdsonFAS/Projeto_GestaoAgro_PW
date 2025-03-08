@@ -17,6 +17,7 @@ const typeorm_1 = require("@nestjs/typeorm");
 const animal_module_1 = require("./animal/animal.module");
 const animal_entity_1 = require("./animal/entities/animal.entity");
 const rebanhos_module_1 = require("./rebanhos/rebanhos.module");
+const rebanho_entity_1 = require("./rebanhos/entities/rebanho.entity");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -30,7 +31,7 @@ exports.AppModule = AppModule = __decorate([
                 username: 'root',
                 password: 'Edson!2Xz',
                 database: 'GestaoAgro',
-                entities: [animal_entity_1.Animal],
+                entities: [animal_entity_1.Animal, rebanho_entity_1.Rebanho],
                 synchronize: false,
             }),
             typeorm_1.TypeOrmModule.forFeature([animal_entity_1.Animal]),
